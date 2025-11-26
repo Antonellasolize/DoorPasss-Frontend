@@ -1,0 +1,31 @@
+class CrearBolicheDto {
+  final String nombre;
+  final String direccion;
+  final String descripcion;
+  final String? imagenUrl;
+
+  CrearBolicheDto({
+    required this.nombre,
+    required this.direccion,
+    required this.descripcion,
+    this.imagenUrl,
+  });
+
+  factory CrearBolicheDto.fromJson(Map<String, dynamic> json) {
+    return CrearBolicheDto(
+      nombre: json['nombre'],
+      direccion: json['direccion'],
+      descripcion: json['descripcion'],
+      imagenUrl: json['imagenUrl'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'nombre': nombre,
+      'direccion': direccion,
+      'descripcion': descripcion,
+      'imagenUrl': imagenUrl,
+    };
+  }
+}
